@@ -260,7 +260,6 @@ class Client(Protocol):
         # connect, with possible failure
         time_spent = 0
         self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.connect((address, FLAGS.port))
         while (not self.connected) and time_spent < FLAGS.timeout:
             try:
                 self.connect((address, FLAGS.port))
